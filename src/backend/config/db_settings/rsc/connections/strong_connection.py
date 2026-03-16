@@ -17,4 +17,4 @@ class StrongConnection(Connection):
         return self.__cnx #Allocating a strong connection
 
     def __exit__(self, exc_type, exc_value, exc_traceback) -> None:
-        self.__cnx.close() #Closing the weak connection
+        self.__cnx.close() #Closing the strong connection
