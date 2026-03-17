@@ -1,8 +1,9 @@
 from .rsc import WeakConnection, StrongConnection, Cursor
+import os
 
 class DatabaseInitializer:
 
-    def __init__(self, user: str, password: str, db_name: str = "store_data_manager_db"):
+    def __init__(self, user: str, password: str, db_name: str = os.getenv("DB_NAME")):
         self.__user: str = user
         self.__password: str = password
         self.__db_name: str = db_name
@@ -20,7 +21,7 @@ class DatabaseInitializer:
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS users (
                         uid INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-                        wkz_password VARCHAR(500) NOT NULL,
+                        wzg_password VARCHAR(500) NOT NULL,
                         first_name VARCHAR(100) NOT NULL,
                         last_name VARCHAR(100) NOT NULL,
                         email VARCHAR(100) NOT NULL,
