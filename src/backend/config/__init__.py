@@ -1,0 +1,1 @@
+from .api_settings import sing_user_json_receiver

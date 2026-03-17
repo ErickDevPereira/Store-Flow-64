@@ -1,0 +1,1 @@
+from .json_singletons import sing_user_json_receiver

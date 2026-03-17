@@ -1,0 +1,6 @@
+You must create a db.env file inside this directory and give the following environmental variables:
+MYSQL_USER and MYSQL_PASSWORD
+An example of a db.env file could be:
+
+MYSQL_USER=root
+MYSQL_PASSWORD=12345678

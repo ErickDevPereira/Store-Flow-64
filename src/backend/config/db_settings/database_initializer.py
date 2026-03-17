@@ -18,12 +18,14 @@ class DatabaseInitializer:
         with StrongConnection(self.__user, self.__password, self.__db_name) as scnx:
             with Cursor(scnx) as cursor:
                 cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS (
+                    CREATE TABLE IF NOT EXISTS users (
                         uid INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+                        wkz_password VARCHAR(500) NOT NULL,
                         first_name VARCHAR(100) NOT NULL,
                         last_name VARCHAR(100) NOT NULL,
                         email VARCHAR(100) NOT NULL,
                         birthdate DATE NOT NULL,
-                        CONSTRAINT email_checker CHECK (email LIKE "%_@_%.com")
+                        CONSTRAINT email_checker CHECK (email LIKE "%_@_%.com"),
+                        CONSTRAINT email_uni UNIQUE( email )
                     )
                 """)
