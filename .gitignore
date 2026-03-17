@@ -1,2 +1,3 @@
 virtual_venv
 src/backend/config/env/db.env
+src/backend/config/env/jwt.env
