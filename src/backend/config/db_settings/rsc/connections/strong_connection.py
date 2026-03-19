@@ -1,4 +1,5 @@
-from mysql.connector import connect, MySQLConnectionAbstract
+from mysql.connector import connect
+from mysql.connector.abstracts import MySQLConnectionAbstract
 from .connection import Connection
 
 class StrongConnection(Connection):

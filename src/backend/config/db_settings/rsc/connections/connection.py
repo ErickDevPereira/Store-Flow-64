@@ -1,4 +1,4 @@
-from mysql.connector import MySQLConnectionAbstract
+from mysql.connector.abstracts import MySQLConnectionAbstract
 from abc import ABC, abstractmethod
 
 class Connection(ABC):

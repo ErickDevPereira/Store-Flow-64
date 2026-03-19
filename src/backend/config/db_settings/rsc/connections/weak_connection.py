@@ -1,4 +1,5 @@
-from mysql.connector import connect, MySQLConnectionAbstract
+from mysql.connector import connect
+from mysql.connector.abstracts import MySQLConnectionAbstract
 from .connection import Connection
 
 class WeakConnection(Connection):
@@ -8,8 +9,8 @@ class WeakConnection(Connection):
     
     def __enter__(self) -> MySQLConnectionAbstract:
         self.__cnx: MySQLConnectionAbstract = connect(
-            user = self.__user,
-            password = self.__password,
+            user = self.user,
+            password = self.password,
             host = "localhost"
         )
         return self.__cnx #Allocating an weak connection

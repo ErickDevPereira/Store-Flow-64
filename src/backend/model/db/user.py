@@ -1,10 +1,10 @@
 from typing import Any, Tuple, List, Dict
-from entity import Remover, Loader, Getter
-from mysql.connector import MySQLConnectionAbstract
+from .entity import Remover, Loader, Getter
+from mysql.connector.abstracts import MySQLConnectionAbstract
 
 class UserBridge(Getter, Loader, Remover):
     
-    def get(self, cursor: Any, uid: int) -> Dict[str, Any]:
+    def get_entity(self, cursor: Any, uid: int) -> Dict[str, Any]:
         cursor.execute("""
                         SELECT
                             uid, first_name, last_name, wzg_password, email, birthdate
@@ -54,6 +54,6 @@ class UserBridge(Getter, Loader, Remover):
                             email = %s 
                     """, (email,))
         self.__user: List[Tuple[str]] = cursor.fetchall()
-        if not len(self.__user) == 0: #The list is empty so there is no user with such email
+        if len(self.__user) == 0: #The list is empty so there is no user with such email
             return False, None
         return True, self.__user[0][0] #If we got here, the user is present, so we return his/her id.

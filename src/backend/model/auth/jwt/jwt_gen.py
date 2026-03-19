@@ -20,7 +20,7 @@ class JwtEngine:
         return encode({
             "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes = int(self.__exp)),
             "uid": uid
-            })
+            }, key = self.__key, algorithm = self.__alg)
     
     def get_token(self, uid: int) -> str:
         return self.__create_token(uid)

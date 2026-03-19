@@ -1,6 +1,6 @@
 from typing import Dict, Any, List, Tuple
 from flask_restful import Resource, reqparse, abort
-from src.backend.config import sing_user_json_receiver
+from src.backend.config.api_settings import sing_user_json_receiver
 from src.backend.config.db_settings.rsc import StrongConnection, Cursor
 import os
 from werkzeug.security import generate_password_hash
@@ -13,7 +13,6 @@ from src.backend.model.auth import jwt_sing
 class User(Resource):
     
     def get(self) -> Response:
-        
         self.__email: str = request.args.get("email", type = str)
         self.__pw: str = request.args.get("password", type = str)
         self.__dataset: Tuple[str, ...] = (self.__email, self.__pw)
@@ -37,7 +36,7 @@ class User(Resource):
             max_age = None,
             secure = True,
             samesite = "none",
-            httonly = True
+            httponly = True
         ) #Setting a cookie with the JWT
         return self.__response
 

@@ -1,5 +1,5 @@
 from typing import Any
-from mysql.connector import MySQLConnectionAbstract
+from mysql.connector.abstracts import MySQLConnectionAbstract
 
 class Cursor:
 
