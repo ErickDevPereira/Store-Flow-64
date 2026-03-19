@@ -13,7 +13,10 @@ menu.onclick = function() {
 }
 
 function correctTogleMenuBug() {
-    if (window.innerWidth >= 430 && opts.style.display === "none") {
+    if (window.innerWidth > 430 && opts.style.display === "none") {
         opts.style.display = "block";
+    }
+    if (window.innerWidth < 430 && opts.style.display === "block") {
+        opts.style.display = "none";
     }
 }
