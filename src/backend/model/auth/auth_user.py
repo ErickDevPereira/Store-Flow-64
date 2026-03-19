@@ -17,8 +17,7 @@ class UserAuthenticator:
                 #Returns (True, uid) if the user is present, (False, None) otherwise
                 self.__tuple_presence: Tuple[bool, None | int] = self.__bridge.user_is_present(cursor, self.__email)
                 #Getting the boolean value that says if the user with this email exists or not.
-                self.__present = self.__tuple_presence[0]
-                print(self.__present)
+                self.__present: bool = self.__tuple_presence[0]
             if self.__present:
                 with Cursor(scnx) as cursor:
                     self.__dataset: Dict[str, Any] = self.__bridge.get_entity(cursor, self.__tuple_presence[1])
