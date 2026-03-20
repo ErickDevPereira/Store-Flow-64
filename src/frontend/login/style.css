@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
 }
 
-section p {
+main > section > p {
     color: white;
     padding: 20px;
     letter-spacing: 3px;
@@ -17,6 +17,25 @@ label {
     color: white;
     font-size: 1.7em;
     padding-left: 20px;
+}
+
+div#err-msg h1 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+div#err-msg {
+    color: rgba(255, 255, 255, 0.616);
+    width: 80%;
+    height: 45px;
+    padding: 10px;
+    background-color: var(--red_col);
+    border-width: 2px;
+    border-color: darkred;
+    border-style: solid;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 div.login-img {

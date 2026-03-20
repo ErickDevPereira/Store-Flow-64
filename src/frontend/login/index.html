@@ -25,14 +25,20 @@
                 <div class = "login-field">
                     <label for = "ipw">Password</label>
                     <div id="pw">
-                        <input type = "password" id = "ipw" name = "password">
+                        <input type = "password" id = "ipw" name = "password" required>
                         <div class="login-img" id = "key">
                         </div>
                     </div>
                 </div>
-                <input type = "submit" value = "Login" class = "but_col_effect" id = "login-but">
+                <input type = "submit" value = "Login" class = "but_col_effect" id = "login-but" required>
             </form>
+            <div id = "err-msg" style = "display: none;">
+                <h1>Attention:</h1>
+                <p></p>
+            </div>
         </section>
     </main>
+    <script src = "listener.js" type = "module">
+    </script>
 </body>
 </html>
