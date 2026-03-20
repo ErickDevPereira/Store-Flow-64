@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login SF64</title>
+    <link href = "../general/style.css" rel = "stylesheet">
+    <link href = "style.css" rel = "stylesheet">
 </head>
 <body>
-    
+    <main>
+        <section id = "ilustration">
+            <p>Welcome to the platform that empowers your ability to master store data — like walking through a field of roses, every insight blooms with purpose</p>
+        </section>
+        <section id = "login">
+            <form style = "width: 100%;">
+                <div class = "login-field">
+                    <label for = "iemail">Email</label>
+                    <div id="email">
+                        <input type = "email" id = "iemail" name = "email">
+                        <div class="login-img" id = "user">
+                        </div>
+                    </div>
+                </div>
+                <div class = "login-field">
+                    <label for = "ipw">Password</label>
+                    <div id="pw">
+                        <input type = "password" id = "ipw" name = "password">
+                        <div class="login-img" id = "key">
+                        </div>
+                    </div>
+                </div>
+                <input type = "submit" value = "Login" class = "but_col_effect" id = "login-but">
+            </form>
+        </section>
+    </main>
 </body>
 </html>

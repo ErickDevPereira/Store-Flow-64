@@ -1,0 +1,173 @@
+body {
+    background-image: url("../imgs/dark-background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section p {
+    color: white;
+    padding: 20px;
+    letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+label {
+    color: white;
+    font-size: 1.7em;
+    padding-left: 20px;
+}
+
+div.login-img {
+    width: 50px;
+    height: 40px;
+    background-color: var(--red_col);
+    transform: translateX(1px) translateY(-42px);
+    border-radius: 20px 0px 0px 20px;
+}
+
+div#key {
+    background-image: url("../imgs/icons8-key-24.png");
+    background-size: 60% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div#user {
+    background-image: url("../imgs/icons8-user-30.png");
+    background-size: 60% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.login-field {
+    width: 100%;
+    margin-left: 40px;
+}
+
+input[type = "submit"]#login-but {
+    width: 82%;
+    margin-left: 40px;
+}
+
+@media (max-width: 500px) {
+
+    input[type = "submit"]#login-but {
+        width: 50%;
+        margin-left: 70px;
+    }
+
+    main {
+        margin: auto;
+        min-width: 320px;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    section#ilustration {
+        display: none;
+    }
+
+    section#login {
+        padding-top: 30px;
+        background-color: var(--dark_red_col);
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    div.login-field input {
+        width: 50%;
+        padding-left: 60px;
+        height: 40px;
+        background-color: var(--half_transparent_col);
+        border-radius: 20px 20px 20px 20px;
+        border-color: white;
+        border-style: solid;
+        border-width: 2px;
+        color: white;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+
+    main {
+        margin: auto;
+        width: 500px;
+        height: 400px;
+        margin-top: 200px;
+        border-radius: 20px 20px 20px 20px;
+        overflow: hidden;
+    }
+
+    section#ilustration {
+        display: none;
+    }
+
+    section#login {
+        padding-top: 30px;
+        background-color: var(--dark_red_col);
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    div.login-field input {
+        width: 70%;
+        padding-left: 60px;
+        height: 40px;
+        background-color: var(--half_transparent_col);
+        border-radius: 20px 20px 20px 20px;
+        border-color: white;
+        border-style: solid;
+        border-width: 2px;
+        color: white;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    main {
+        margin: auto;
+        width: 1000px;
+        height: 400px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.527);
+        border-radius: 20px 20px 20px 20px;
+        overflow: hidden;
+        margin-top: 200px;
+    }
+
+    section#ilustration {
+        background-image: url("../imgs/background-roses.png");
+        background-position: right;
+        background-size: cover;
+        float: left;
+        width: 50%;
+        height: 100%;
+        box-shadow: inset 0px 0px 150px black;
+    }
+
+    section#login {
+        padding-top: 30px;
+        background-color: var(--dark_red_col);
+        float: right;
+        width: 50%;
+        height: 100%;
+    }
+
+    div.login-field input {
+        width: 70%;
+        padding-left: 60px;
+        height: 40px;
+        background-color: var(--half_transparent_col);
+        border-radius: 20px 20px 20px 20px;
+        border-color: white;
+        border-style: solid;
+        border-width: 2px;
+        color: white;
+        font-size: 1.5em;
+    }
+}

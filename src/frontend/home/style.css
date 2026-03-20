@@ -68,21 +68,7 @@ div#but-container {
 button.but {
     height: 50px;
     width: 100%;
-    border-radius: 20px 20px 20px 20px;
     margin-top: 10px;
-    font-size: 1.8em;
-    color: white;
-    background-color: var(--dark_red_col);
-    border-style: solid;
-    border-color: white;
-    border-width: 2px;
-    transition: background-color 1.0s;
-}
-
-button.but:hover {
-    cursor: pointer;
-    background-color: var(--red_col);
-    border-color: var(--red_col);
 }
 
 @media (max-width: 429px) {

@@ -3,6 +3,7 @@
     --dark_red_col: #68020F;
     --red_col: #ff5672;
     --light_color: #F8F8F8;
+    --half_transparent_col: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -15,4 +16,22 @@ body {
     padding: 0px;
     font-family: "Work Sans", sans-serif;
     font-weight: 400;
+}
+
+.but_col_effect {
+    border-radius: 20px 20px 20px 20px;
+    transition: background-color 1.0s;
+    font-size: 1.8em;
+    color: white;
+    background-color: var(--dark_red_col);
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.but_col_effect:hover {
+    cursor: pointer;
+    background-color: var(--red_col);
+    border-color: var(--red_col);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }

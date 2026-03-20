@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register SF64</title>
+    <link href = "../general/style.css" rel = "stylesheet">
+    <link href = "style.css" rel = "stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 <body>
-    
+    <main id = "reg_region" class = "dim_togler">
+        <form>
+            <div class = "field">
+                <label for = "ifname">First Name</label>
+                <br>
+                <input type = "text" id = "ifname" name = "fname">
+            </div>
+            <div class = "field pos_field">
+                <label for = "ilname">Last Name</label>
+                <br>
+                <input type = "text" id = "ilname" name = "lname">
+            </div>
+            <div class = "field pos_field">
+                <label for = "iemail">Email</label>
+                <br>
+                <input type = "email" id = "iemail" name = "email">
+            </div>
+            <div class = "field pos_field">
+                <label for = "ipw">Password</label>
+                <br>
+                <input type = "password" id = "ipw" name = "pw">
+            </div>
+            <div class = "field pos_field">
+                <label for = "ibtd">Birthdate</label>
+                <br>
+                <input type = "date" id = "ibtd" name = "btd">
+            </div>
+            <div class = "field pos_field">
+                <input type = "submit" class = "but_col_effect" value = "SUBMIT">
+            </div>
+        </form>
+    </main>
 </body>
 </html>
