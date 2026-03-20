@@ -66,7 +66,9 @@ class User(Resource):
                         )
                 #DataError will raise when the format or size of the input data doesn't accomplish the type for the column.
                 #IntegrityError will raise when a constraint has been broken by the input data, like a CHECK, FK or UNIQUE constraint.
-                except (DataError, IntegrityError) as err:
-                    abort(400, message = f"ERROR: {err}")
+                except IntegrityError as err:
+                    abort(403, message = f"FORBIDDEN ERROR: {err}")
+                except DataError as err:
+                    abort(500, message = f"INTERNAL SERVER ERROR: {err}")
         #Response when everything went fine.
         return {"message": "User created successfully"}, 201

@@ -6,6 +6,8 @@
     <title>Register SF64</title>
     <link href = "../general/style.css" rel = "stylesheet">
     <link href = "style.css" rel = "stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -16,32 +18,38 @@
             <div class = "field">
                 <label for = "ifname">First Name</label>
                 <br>
-                <input type = "text" id = "ifname" name = "fname">
+                <input type = "text" id = "ifname" name = "fname" required>
             </div>
             <div class = "field pos_field">
                 <label for = "ilname">Last Name</label>
                 <br>
-                <input type = "text" id = "ilname" name = "lname">
+                <input type = "text" id = "ilname" name = "lname" required>
             </div>
             <div class = "field pos_field">
                 <label for = "iemail">Email</label>
                 <br>
-                <input type = "email" id = "iemail" name = "email">
+                <input type = "email" id = "iemail" name = "email" required>
             </div>
             <div class = "field pos_field">
                 <label for = "ipw">Password</label>
                 <br>
-                <input type = "password" id = "ipw" name = "pw">
+                <input type = "password" id = "ipw" name = "pw" required>
             </div>
             <div class = "field pos_field">
                 <label for = "ibtd">Birthdate</label>
                 <br>
-                <input type = "date" id = "ibtd" name = "btd">
+                <input type = "date" id = "ibtd" name = "btd" required>
             </div>
             <div class = "field pos_field">
                 <input type = "submit" class = "but_col_effect" value = "SUBMIT">
             </div>
         </form>
+        <div style="display: none;" class="alert alert-warning alert-dismissible fade show" role="alert" id = "fading-msg">
+            <strong style = 'color: rgb(0, 0, 0)'>Attention:</strong><p></p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     </main>
+    <script src = "listener.js" type="module">
+    </script>
 </body>
 </html>

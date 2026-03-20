@@ -46,11 +46,6 @@ div.login-field {
     margin-left: 40px;
 }
 
-input[type = "submit"]#login-but {
-    width: 82%;
-    margin-left: 40px;
-}
-
 @media (max-width: 500px) {
 
     input[type = "submit"]#login-but {
@@ -93,11 +88,17 @@ input[type = "submit"]#login-but {
 
 @media (min-width: 500px) and (max-width: 1000px) {
 
+    input[type = "submit"]#login-but {
+        width: 82%;
+        margin-left: 40px;
+    }
+
     main {
         margin: auto;
         width: 500px;
         height: 400px;
         margin-top: 200px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.527);
         border-radius: 20px 20px 20px 20px;
         overflow: hidden;
     }
@@ -129,6 +130,11 @@ input[type = "submit"]#login-but {
 }
 
 @media (min-width: 1000px) {
+
+    input[type = "submit"]#login-but {
+        width: 82%;
+        margin-left: 40px;
+    }
 
     main {
         margin: auto;

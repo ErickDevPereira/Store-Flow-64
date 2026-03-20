@@ -6,6 +6,17 @@
     --half_transparent_col: rgba(0, 0, 0, 0.5);
 }
 
+div#fading-msg {
+    background-color: rgb(136,231,136);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-color: rgb(74, 187, 74);
+} /*The fading-msg id will be present in multiple .html files and they share the same visual affects for this box*/
+
+div#fading-msg p {
+    color: rgb(0, 83, 0);
+}
+
 body {
     width: 100vw;
     height: 100vh;

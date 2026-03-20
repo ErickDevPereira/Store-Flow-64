@@ -1,22 +1,22 @@
-body {
-    background-image: url("../imgs/background-roses.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 100px;
-}
-
-main#reg_region {
-    background-color: var(--dark_red_col);
-    background-image: linear-gradient(45deg, var(--dark_red_col), #ff173e);
-    margin: auto;
-    color: white;
-    padding: 30px;
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: 8px 8px 10px var(--half_transparent_col);
-}
-
 @media (max-width: 720px) {
+
+    body {
+        background-image: url("../imgs/background-roses.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 0px;
+    }
+
+    main#reg_region {
+        background-color: var(--dark_red_col);
+        background-image: linear-gradient(45deg, var(--dark_red_col), #ff173e);
+        margin: auto;
+        color: white;
+        padding: 30px;
+        box-shadow: 8px 8px 10px var(--half_transparent_col);
+    }
+
     main.dim_togler {
         width: 100%;
     }
@@ -42,14 +42,27 @@ main#reg_region {
     div.field > label {
         font-size: 1.5em;
     }
-
-    div.pos_field {
-        margin-top: 20px;
-    }
-
 }
 
 @media (min-width: 720px) {
+
+    body {
+        background-image: url("../imgs/background-roses.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 100px;
+    }
+
+    main#reg_region {
+        background-color: var(--dark_red_col);
+        background-image: linear-gradient(45deg, var(--dark_red_col), #ff173e);
+        margin: auto;
+        color: white;
+        padding: 30px;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 8px 8px 10px var(--half_transparent_col);
+    }
 
     main.dim_togler {
         width: 50%;
@@ -76,8 +89,8 @@ main#reg_region {
     div.field > label {
         font-size: 2em;
     }
+}
 
-    div.pos_field {
-        margin-top: 20px;
-    }
+div.pos_field {
+    margin-top: 20px; /*Comes after the margin: auto in order to avoid reset*/
 }
