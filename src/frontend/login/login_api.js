@@ -9,7 +9,7 @@ export function startUserSession(email, password, base_path = `http://127.0.0.1:
     })
     .then(data => {
         if (status === 200) {
-            console.log("To be redirected in the future");
+            console.log("To be redirected in the future"); //Will be reached when the user logged into his/her account.
         } else {
             msgDiv.style.display = "block";
             stdMsg.innerText = data["message"];

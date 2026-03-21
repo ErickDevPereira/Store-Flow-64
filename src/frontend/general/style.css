@@ -46,3 +46,8 @@ body {
     border-color: var(--red_col);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+
+a.simple-anchor {
+    text-decoration: none;
+    color:white;
+}
