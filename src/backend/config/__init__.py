@@ -1,1 +1,1 @@
-from .api_settings import sing_user_json_receiver
+from .api_settings import sing_user_json_receiver, sing_store_json_receiver

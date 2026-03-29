@@ -1,4 +1,4 @@
-from src.backend.controller.user import User
+from src.backend.controller import User, Store
 from flask_restful import Api, reqparse
 from flask import Flask
 from flask_cors import CORS
@@ -19,6 +19,7 @@ class ApiSetter:
     
     def __set_rscs(self) -> None:
         self.__api.add_resource(User, "/user")
+        self.__api.add_resource(Store, "/store")
     
     def turn_on(self) -> None:
         self.__app.run(debug = True)

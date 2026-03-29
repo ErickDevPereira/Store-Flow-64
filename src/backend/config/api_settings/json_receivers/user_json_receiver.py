@@ -1,4 +1,4 @@
-from flask_restful import reqparse
+from flask_restful.reqparse import RequestParser, Namespace
 from .json_receiver import JsonReceiver
 
 class UserJsonReceiver(JsonReceiver):
@@ -8,9 +8,9 @@ class UserJsonReceiver(JsonReceiver):
         self.set_arguments()
 
     def create_args(self) -> None:
-        self.__args: reqparse.RequestParser = reqparse.RequestParser()
+        self.__args: RequestParser = RequestParser()
     
-    def get_args(self) -> reqparse.RequestParser:
+    def get_args(self) -> Namespace:
         return self.__args.parse_args()
 
     def set_arguments(self) -> None:

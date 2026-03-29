@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from flask_restful import reqparse
+from flask_restful.reqparse import Namespace
 
 class JsonReceiver(ABC):
 
@@ -10,4 +10,4 @@ class JsonReceiver(ABC):
     def set_arguments(self) -> None: pass
 
     @abstractmethod
-    def get_args(self) -> reqparse.RequestParser: pass
+    def get_args(self) -> Namespace: pass

@@ -1,5 +1,5 @@
-from typing import Dict, Any, List, Tuple
-from flask_restful import Resource, reqparse, abort
+from typing import Dict, Any, Tuple
+from flask_restful import Resource, abort
 from src.backend.config.api_settings import sing_user_json_receiver
 from src.backend.config.db_settings.rsc import StrongConnection, Cursor
 import os
@@ -9,6 +9,7 @@ from src.backend.model.db import UserBridge
 from flask import request, make_response, Response
 from src.backend.model.auth import UserAuthenticator
 from src.backend.model.auth import jwt_sing
+from flask_restful.reqparse import Namespace
 
 class User(Resource):
     
@@ -33,7 +34,7 @@ class User(Resource):
         self.__response.set_cookie(
             key = "jwt",
             value = self.__jwt,
-            max_age = None,
+            max_age = 3600,
             secure = True,
             samesite = "none",
             httponly = True
@@ -41,7 +42,7 @@ class User(Resource):
         return self.__response
 
     def post(self) -> Tuple[Dict[str, Any], int]:
-        self.__JSON: reqparse.RequestParser = sing_user_json_receiver.get_args()
+        self.__JSON: Namespace = sing_user_json_receiver.get_args()
         for field in (
             self.__JSON["first_name"],
             self.__JSON["last_name"],
