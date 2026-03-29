@@ -8,6 +8,7 @@ import os
 from flask import make_response, Response
 from src.backend.model.auth import auth_jwt
 from typing import Dict, Any
+from src.backend.model.utils import Algorithms
 
 class Store(Resource):
 
@@ -40,3 +41,14 @@ class Store(Resource):
             samesite = "none"
         )
         return self.__resp
+
+    def get(self):
+        jwt, uid = auth_jwt() #Authenticating the cookies and jwt
+        self.__sb: StoreBridge = StoreBridge()
+        with StrongConnection(os.getenv("MYSQL_USER"), os.getenv("MYSQL_PASSWORD"), os.getenv("DB_NAME")) as scnx:
+            with Cursor(scnx) as cursor:
+                self.__stores = self.__sb.get_entity(
+                            cursor = cursor,
+                            uid = uid
+                )
+        return {"stores": self.__stores}, 200

@@ -1,3 +1,5 @@
 import datetime
 
-print({1: "asd", "2": "sdasd"})
+d = {"a": 1, "b": 2}
+
+print(list(d.keys()))
