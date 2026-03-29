@@ -1,4 +1,4 @@
-from mysql.connector import MySQLConnectionAbstract
+from mysql.connector.abstracts import MySQLConnectionAbstract
 from src.backend.config.db_settings.rsc import Cursor
 from .plant import Plant
 

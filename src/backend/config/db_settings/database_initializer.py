@@ -2,7 +2,7 @@ from .rsc import WeakConnection, StrongConnection, Cursor
 import os
 from mysql.connector.errors import ProgrammingError
 from mysql.connector.abstracts import MySQLConnectionAbstract
-from .tables import Users, Stores, Plant, Customers, Suppliers, Categories, Products
+from .tables import Users, Stores, Plant, Customers, Suppliers, Categories, Products, Employees
 from typing import List
 
 class Database:
@@ -20,7 +20,8 @@ class Database:
             Customers(),
             Suppliers(),
             Categories(),
-            Products()
+            Products(),
+            Employees()
             ] #Getting the tables. Note that the Liskov Principle has been followed here.
     
     def start_db(self) -> None:
