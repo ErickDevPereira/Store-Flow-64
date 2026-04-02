@@ -11,9 +11,11 @@ export function disableModal() {
     const modal = document.getElementById("modal-cont");
     const others = document.querySelectorAll("body > main")[0];
     const msg = document.getElementById("err-msg");
+    const input_txt = document.getElementById("icompany");
     others.style.opacity = "1.0";
     others.inert = false;
     others.style.filter = "blur(0px)";
     modal.style.display = "none";
     msg.innerText = "";
+    input_txt.value = ""; //Won't let the previous value remains in the input box.
 }
