@@ -1,0 +1,114 @@
+main {
+    width: 100%;
+    margin-top: 80px;
+}
+
+header {
+    z-index: 9999;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #F8F8F8;
+}
+
+div#logo-space {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 370px;
+    margin-left: 100px;
+    letter-spacing: 2px;
+}
+
+div#logo {
+    background-image: url("../imgs/cube.png");
+    background-position: center;
+    background-size: 100% 100%;
+    width: 65px;
+    height: 65px;
+}
+
+div#access-contact {
+    display:flex;
+    margin-right: 100px;
+    width: 200px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80px;
+}
+
+div#access-contact p {
+    transform: translateX(4px) translateY(2px);
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
+div#access-contact > div {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+div#github-simbol {
+    background-image: url("../imgs/github.png");
+    background-position: center;
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+}
+
+div#ld-simbol {
+    background-image: url("../imgs/ld.png");
+    background-position: center;
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 780px) {
+    header {
+        position: static;
+        top: 0px;
+        display: block;
+        height: 60px;
+        width: 100%;
+        background-color: #F8F8F8;
+    }
+
+    div#logo-space {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+        margin: auto;
+    }
+
+    div#logo-space h1 {
+        font-size: 1.7em;
+    }
+
+    div#logo {
+        background-image: url("../imgs/cube.png");
+        background-position: center;
+        background-size: 100% 100%;
+        width: 45px;
+        height: 45px;
+    }
+
+    div#access-contact {
+        display:none;
+    }
+
+    main {
+        margin-top: 0px;
+    }
+}

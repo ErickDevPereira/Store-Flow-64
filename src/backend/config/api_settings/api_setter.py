@@ -12,7 +12,7 @@ class ApiSetter:
     
     def __create_app(self) -> None:
         self.__app: Flask = Flask(__name__)
-        CORS(self.__app, set_credentials = True) #Allows communication of cookies between Python (backend) and JS (frontend)
+        CORS(self.__app, supports_credentials = True) #Allows communication of cookies between Python (backend) and JS (frontend)
     
     def __create_api(self) -> None:
         self.__api: Api = Api(self.__app)

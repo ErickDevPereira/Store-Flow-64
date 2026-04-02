@@ -2,14 +2,14 @@ export function startUserSession(email, password, base_path = `http://127.0.0.1:
     const msgDiv = document.getElementById("err-msg");
     const stdMsg = document.querySelectorAll("#err-msg > p")[0]; //Getting the area where the error text will be
     let status;
-    fetch(base_path + `?email=${email}&password=${password}`, {method: "GET"})
+    fetch(base_path + `?email=${email}&password=${password}`, {method: "GET", credentials: "include"})
     .then(resp => {
         status = resp.status;
         return resp.json();
     })
     .then(data => {
         if (status === 200) {
-            console.log("To be redirected in the future"); //Will be reached when the user logged into his/her account.
+            window.location.href = "../choices/index.html"; //User has logged into his/her account
         } else {
             msgDiv.style.display = "block";
             stdMsg.innerText = data["message"];

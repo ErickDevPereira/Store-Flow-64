@@ -1,8 +1,7 @@
-from entity import *
+from .entity import *
 from mysql.connector.abstracts import MySQLConnectionAbstract
 from typing import Any, Tuple, List, Dict
 import datetime
-from jwt import decode
 
 class StoreBridge(Getter, Loader, Remover):
 
@@ -20,7 +19,7 @@ class StoreBridge(Getter, Loader, Remover):
         cnx.commit()
     
     def get_entity(self, cursor: Any, uid: int) -> List[Dict[int, Any]]:
-        self.__dataset: List[Tuple[Any,...]] = cursor.execute(
+        cursor.execute(
             """ SELECT
                     company_name, store_id, registration_date
                 FROM
@@ -30,7 +29,9 @@ class StoreBridge(Getter, Loader, Remover):
                 ORDER BY
                     store_id ASC""", (uid,)
                     )
+        self.__dataset: List[Tuple[Any,...]] = cursor.fetchall()
+        print(self.__dataset)
         self.__organized_dataset = []
         for data in self.__dataset:
-            self.__organized_dataset.append({data[1] : {"company_name": data[0], "registration_date": data[2]}})
+            self.__organized_dataset.append({"store_id": data[1], "company_name": data[0], "registration_date": str(data[2])})
         return self.__organized_dataset #The dataset is sorted by store_id in ascending mode, which allows us to use binary search in order to get the store that we need as fastest as possible.

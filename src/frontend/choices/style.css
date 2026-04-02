@@ -1,0 +1,143 @@
+div#btf-img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../imgs/top-background.png");
+}
+
+div#presentation {
+    position: absolute;
+    width: 100%;
+    background-color: #ff656541;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    bottom: 0px;
+}
+
+div#presentation h1 {
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0px 0px 4px white;
+}
+
+.pattern-background {
+    background-color: rgb(150, 150, 150);
+}
+
+section {
+    margin: auto;
+}
+
+section#stores-place {
+    margin-top: 20px;
+    width: 90%;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.store {
+    width: 300px;
+    height: 300px;
+    background-image: linear-gradient(45deg, #c72727, var(--red_col));
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
+    cursor: pointer;
+    transition: transform 1.0s, background-image 1.0s, width 1.0s, height 1.0s;
+}
+
+.store:hover {
+    width: 250px;
+    height: 250px;
+    transform: translateX(30px) translateY(30px);
+    background-image: linear-gradient(45deg, var(--red_col), #c72727);
+}
+
+#adder #shop-img {
+    position: absolute;
+    background-image: url("../imgs/shopping-cart.png");
+    background-position: center;
+    width:150px;
+    height: 150px;
+    background-size: 100% 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-40%);
+
+}
+
+#adder h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+#adder {
+    position: relative;
+    background-image: linear-gradient(45deg, #31ff9f, rgb(0, 206, 0));
+}
+
+#adder:hover {
+    width: 250px;
+    height: 250px;
+    transform: translateX(30px) translateY(30px);
+    background-image: linear-gradient(45deg,  rgb(0, 206, 0), #31ff9f);
+}
+
+@media (max-width: 1700px) {
+    section#stores-place {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1420px) {
+    section#stores-place {
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1100px) {
+    section#stores-place {
+    grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media (max-width: 720px) {
+
+    div#presentation h1 {
+        font-size: 1.5em;
+    }
+
+    section#stores-place {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .store {
+        width: 80%;
+        margin: auto;
+    }
+
+    .store:hover {
+        width: 70%;
+        height: 250px;
+        transform: translateX(0px) translateY(0px);
+    }
+
+    #adder {
+        width: 80%;
+        margin: auto;
+    }
+
+    #adder:hover {
+        width: 70%;
+        transform: translateX(0px) translateY(0px);
+        background-image: linear-gradient(45deg,  rgb(0, 206, 0), #31ff9f);
+    }
+
+}
