@@ -1,3 +1,37 @@
+section#modal-cont {
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    background-color: rgb(245, 245, 245);
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 20px;
+    display: none;
+}
+
+main {
+    transition: filter 0.3s linear;
+}
+
+section#modal-cont #close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background-image: url('../imgs/cross.png');
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: 100% 100%;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+section#modal-cont #close:hover {
+    opacity: 1.0;
+}
+
 div#btf-img {
     position: relative;
     width: 100%;
@@ -32,6 +66,46 @@ section {
     margin: auto;
 }
 
+#new-store-form {
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#new-store-form > input[type="text"] {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    font-size: 1.7em;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+#new-store-form > input[type="submit"] {
+    background-color: #31ff9f;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 35%;
+    transition: background-color 0.5s;
+}
+
+#new-store-form > input[type="submit"]:hover {
+    background-color: #00f080;
+}
+
+#new-store-form label {
+    font-size: 1.5em;
+    padding-left: 60px;
+}
+
 section#stores-place {
     margin-top: 20px;
     width: 90%;
@@ -49,6 +123,23 @@ section#stores-place {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
     cursor: pointer;
     transition: transform 1.0s, background-image 1.0s, width 1.0s, height 1.0s;
+    color: white;
+    padding: 20px;
+}
+
+.store p {
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+.store h2 {
+    padding: 5px;
+    font-size: 1.6em;
+}
+
+.store hr {
+    border-color: white;
+    border-style: solid;
 }
 
 .store:hover {
@@ -68,12 +159,13 @@ section#stores-place {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-40%);
-
 }
 
 #adder h2 {
     text-align: center;
     padding: 20px;
+    color: black;
+    font-weight: bold;
 }
 
 #adder {

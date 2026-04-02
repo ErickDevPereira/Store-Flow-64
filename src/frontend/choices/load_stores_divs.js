@@ -4,9 +4,11 @@ export function load_stores_divs(JSON) {
     for ( let i = 0; i < JSON['stores'].length; i++ ) {
         const store$div = document.createElement("div");
         store$div.className = "store";
-        store$div.innerHTML = `${JSON['stores'][i]['company_name']}
+        const date_parts = JSON['stores'][i]['registration_date'].split("-");
+        const clean_date = date_parts[2] + '/' + date_parts[1] + '/' + date_parts[0];
+        store$div.innerHTML = `<h2>${JSON['stores'][i]['company_name']}</h2>
                                 <hr>
-                                Registration date: ${JSON['stores'][i]['registration_date']}`;
+                                <p>Registration date: ${clean_date}</p>`;
         placement.insertBefore(store$div, reference); //Inserting the element inside the frontend.
     }
 }

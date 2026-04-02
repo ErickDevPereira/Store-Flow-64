@@ -9,6 +9,15 @@
     <title>Choices SF64</title>
 </head>
 <body>
+    <section id = "modal-cont">
+        <div id = "close" onclick = "disableModal()"></div>
+        <form method = "POST" id = "new-store-form">
+            <label>Company name</label>
+            <br>
+            <input type = "text" name = "company" id = "icompany">
+            <input type = "submit" name = "create-store" id = 'icreate' value = "CREATE">
+        </form>
+    </section>
     <header>
         <div id = "logo-space">
             <div id = "logo">
@@ -36,12 +45,13 @@
             </div>
         </div>
         <section id = "stores-place">
-            <div class = "store" id = "adder">
+            <div class = "store" id = "adder" onclick = "enableModal()">
                 <h2>add a new store</h2>
                 <div id = "shop-img"></div>
             </div>
         </section>
     </main>
+    <script src = "modal.js"></script>
     <script src = "start_script.js" type = "module"></script>
     <script src = "../general/utils.js"></script>
 </body>
