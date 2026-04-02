@@ -1,6 +1,8 @@
+import { loadSingleStore } from "./load_single_store.js";
+import { disableModal } from "./modal.js";
+
 export function createNewStore(path, company_name) {
     let ok = false;
-    console.log(1);
     fetch(path, {
         credentials: "include",
         method: "POST",
@@ -17,7 +19,9 @@ export function createNewStore(path, company_name) {
     }
     ).then(data => {
         if (ok) {
-            window.location.href = "./index.html";
+            const today = new Date().toISOString().split("T")[0] //Today's date (formated as YYYY-MM-DD)
+            loadSingleStore(company_name, today);
+            disableModal(); //Exiting the modal
         } else {
             document.getElementById("err-msg").innerText = data["message"];
         }

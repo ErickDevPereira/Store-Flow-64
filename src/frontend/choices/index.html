@@ -10,7 +10,7 @@
 </head>
 <body>
     <section id = "modal-cont">
-        <div id = "close" onclick = "disableModal()"></div>
+        <div id = "close"></div>
         <form id = "new-store-form" method = "post">
             <label>Company name</label>
             <br>
@@ -46,14 +46,14 @@
             </div>
         </div>
         <section id = "stores-place">
-            <div class = "store" id = "adder" onclick = "enableModal()">
+            <div class = "store" id = "adder">
                 <h2>add a new store</h2>
                 <div id = "shop-img"></div>
             </div>
         </section>
     </main>
+    <!--If the .js file has import or export, I should use type = "module", otherwise, I don't need it-->
     <script src = "listenner.js" type = "module"></script>
-    <script src = "modal.js"></script>
     <script src = "start_script.js" type = "module"></script>
     <script src = "../general/utils.js"></script>
 </body>

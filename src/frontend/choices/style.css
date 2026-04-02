@@ -13,11 +13,15 @@ section#modal-cont {
 
 #err-msg {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
+    font-size: 1.5em;
+    color: var(--red_col);
+    font-weight: bold;
 }
 
 main {
     transition: filter 0.3s linear;
+    background-color: rgb(230, 230, 230);
 }
 
 section#modal-cont #close {
@@ -52,7 +56,8 @@ div#presentation {
     width: 100%;
     background-color: #ff656541;
     backdrop-filter: blur(5px);
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     bottom: 0px;
 }
 
@@ -117,7 +122,7 @@ section#stores-place {
     min-height: 80vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 .store {
@@ -237,4 +242,17 @@ section#stores-place {
         background-image: linear-gradient(45deg,  rgb(0, 206, 0), #31ff9f);
     }
 
+}
+
+@media (max-width: 520px) {
+    section#modal-cont {
+    width: 100%;
+    border-radius: 0px;
+    }
+
+    #new-store-form > input[type="text"] {
+    width: 250px;
+    border-radius: 5px;
+    margin-left: 5%;
+    }
 }

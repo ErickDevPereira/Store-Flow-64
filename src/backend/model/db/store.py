@@ -30,7 +30,6 @@ class StoreBridge(Getter, Loader, Remover):
                     store_id ASC""", (uid,)
                     )
         self.__dataset: List[Tuple[Any,...]] = cursor.fetchall()
-        print(self.__dataset)
         self.__organized_dataset = []
         for data in self.__dataset:
             self.__organized_dataset.append({"store_id": data[1], "company_name": data[0], "registration_date": str(data[2])})

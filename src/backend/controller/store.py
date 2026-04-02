@@ -17,6 +17,8 @@ class Store(Resource):
         self.__JSON: Namespace = sing_store_json_receiver.get_args()
         if self.__JSON["company_name"] is None:
             abort(400, message = "you msut give the 'company_name'")
+        if not 0 < len(self.__JSON["company_name"]) <= 50 :
+            abort(403, message = "the name must have at least 1 character and no more than 50 characters!")
         self.__sb: StoreBridge = StoreBridge()
         with StrongConnection(os.getenv("MYSQL_USER"), os.getenv("MYSQL_PASSWORD"), os.getenv("DB_NAME")) as scnx:
             with Cursor(scnx) as cursor:
