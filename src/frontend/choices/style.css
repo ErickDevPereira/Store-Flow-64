@@ -11,6 +11,11 @@ section#modal-cont {
     display: none;
 }
 
+#err-msg {
+    text-align: center;
+    padding: 10px;
+}
+
 main {
     transition: filter 0.3s linear;
 }

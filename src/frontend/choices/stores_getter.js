@@ -4,12 +4,12 @@ export function get_stores() {
     const PATH = "http://127.0.0.1:5000/store";
     let ok = false;
     let JSON;
-    fetch(PATH, {credentials: "include"}) //credentials as 'include' will allow the frontend to send back the cookies to the backend
+    fetch(PATH, {credentials: "include", method: "GET"}) //credentials as 'include' will allow the frontend to send back the cookies to the backend
     .then(resp => {
         if (resp.status === 200) {
             ok = true; //Everything went fine and the JSON with the stores was sent to the frontend
         } else {
-            window.location.href = "../login/index.html";
+            window.location.href = "../login/index.html"; //Redirect back to the login area when the status other than 200, like 401 (Unauthorized)
         }
         return resp.json(); //The stores are inside this JSON.
     })

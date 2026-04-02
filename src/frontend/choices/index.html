@@ -11,11 +11,12 @@
 <body>
     <section id = "modal-cont">
         <div id = "close" onclick = "disableModal()"></div>
-        <form method = "POST" id = "new-store-form">
+        <form id = "new-store-form" method = "post">
             <label>Company name</label>
             <br>
             <input type = "text" name = "company" id = "icompany">
             <input type = "submit" name = "create-store" id = 'icreate' value = "CREATE">
+            <p id = "err-msg"></p>
         </form>
     </section>
     <header>
@@ -51,6 +52,7 @@
             </div>
         </section>
     </main>
+    <script src = "listenner.js" type = "module"></script>
     <script src = "modal.js"></script>
     <script src = "start_script.js" type = "module"></script>
     <script src = "../general/utils.js"></script>
