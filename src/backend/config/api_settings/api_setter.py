@@ -23,3 +23,7 @@ class ApiSetter:
     
     def turn_on(self) -> None:
         self.__app.run(debug = True)
+
+    @property
+    def app(self) -> Api:
+        return self.__app
