@@ -10,6 +10,7 @@ from flask import request, make_response, Response
 from src.backend.model.auth import UserAuthenticator
 from src.backend.model.auth import jwt_sing
 from flask_restful.reqparse import Namespace
+from src.backend.model.rate_limit import process_rate_out
 
 class User(Resource):
     
@@ -42,6 +43,10 @@ class User(Resource):
         return self.__response
 
     def post(self) -> Tuple[Dict[str, Any], int]:
+        ip: str | None = request.args.get("ip", type = str)
+        if ip is None:
+            raise Exception("Problem while catching the IP of the user!")
+        process_rate_out(ip)
         self.__JSON: Namespace = sing_user_json_receiver.get_args()
         for field in (
             self.__JSON["first_name"],
