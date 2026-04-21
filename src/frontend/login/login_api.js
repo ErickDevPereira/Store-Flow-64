@@ -1,8 +1,8 @@
-export function startUserSession(email, password, base_path = `http://127.0.0.1:5000/user`) {
+export function startUserSession(email, password, ip, base_path = `http://127.0.0.1:5000/user`) {
     const msgDiv = document.getElementById("err-msg");
     const stdMsg = document.querySelectorAll("#err-msg > p")[0]; //Getting the area where the error text will be
     let status;
-    fetch(base_path + `?email=${email}&password=${password}`, {method: "GET", credentials: "include"})
+    fetch(base_path + `?email=${email}&password=${password}&ip=${ip}`, {method: "GET", credentials: "include"})
     .then(resp => {
         status = resp.status;
         return resp.json();

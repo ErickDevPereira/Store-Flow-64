@@ -1,3 +1,3 @@
-from src.backend.config.api_settings import ApiSetter
+from .api_setter import ApiSetter
 
 api: ApiSetter = ApiSetter()

@@ -1,6 +1,6 @@
 from flask_restful import abort
 from .limitter import ORMReader, ORMWriter
-from src.backend.config.orm import db
+from src.backend.config.api_settings import api
 
 def process_rate_out(ip: str) -> None:
     authorization = ORMReader.is_authorized(ip)
@@ -15,5 +15,5 @@ def process_rate_out(ip: str) -> None:
     signal = ORMReader.has_many_requests(network_ip=ip, max_frequency=20) #Checking if this IP exceeded the limit frequency
     if signal:
         address.blocked_status = 1 #Blocking the IP
-        db.session.commit()
+        api.db.session.commit()
         abort(429, message = "Too many requests")

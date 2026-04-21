@@ -15,6 +15,11 @@ from src.backend.model.rate_limit import process_rate_out
 class User(Resource):
     
     def get(self) -> Response:
+        ip: str | None = request.args.get("ip", type = str)
+        if ip is None:
+            raise Exception("Problem while catching the IP of the user!")
+        print(ip)
+        process_rate_out(ip)
         self.__email: str = request.args.get("email", type = str)
         self.__pw: str = request.args.get("password", type = str)
         self.__dataset: Tuple[str, ...] = (self.__email, self.__pw)
@@ -43,10 +48,6 @@ class User(Resource):
         return self.__response
 
     def post(self) -> Tuple[Dict[str, Any], int]:
-        ip: str | None = request.args.get("ip", type = str)
-        if ip is None:
-            raise Exception("Problem while catching the IP of the user!")
-        process_rate_out(ip)
         self.__JSON: Namespace = sing_user_json_receiver.get_args()
         for field in (
             self.__JSON["first_name"],

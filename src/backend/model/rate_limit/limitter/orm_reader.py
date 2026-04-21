@@ -1,4 +1,5 @@
-from src.backend.config.orm import NetworkConnection, Address, db
+from src.backend.config.orm import NetworkConnection, Address
+from src.backend.config.api_settings import api
 from flask_sqlalchemy.query import Query
 from typing import Any, List, Dict
 from datetime import datetime, timedelta
@@ -60,4 +61,4 @@ class ORMReader:
         if ip_obj is None:
             raise Exception(cls.ERROR)
         ip_obj.blocked_status = 0 if ip_obj.blocked_status == 1 else 1
-        db.session.commit()
+        api.db.session.commit()
