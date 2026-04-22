@@ -1,2 +1,3 @@
 from .user_json_receiver import UserJsonReceiver
 from .store_json_receiver import StoreJsonReceiver
+from .login_json_receiver import LoginJsonReceiver

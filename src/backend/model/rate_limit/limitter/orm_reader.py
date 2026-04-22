@@ -39,6 +39,7 @@ class ORMReader:
     @staticmethod
     def is_authorized(network_ip: str) -> bool | None:
         address = Address.query.filter_by(network_ip=network_ip).first()
+        print(address)
         if address is None:
             return None #This IP is new
         if address.blocked_status == 1:

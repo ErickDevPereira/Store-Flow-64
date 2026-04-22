@@ -1,4 +1,4 @@
-export function createUser(fname, lname, email, password, birthdate, path = "http://127.0.0.1:5000/user") {
+export function createUser(fname, lname, email, password, birthdate, path = "http://127.0.0.1:5000/register") {
     fetch(path, {
         method: "POST",
         body: JSON.stringify({

@@ -12,7 +12,7 @@ def process_rate_out(ip: str) -> None:
             else:
                 ORMReader.toggle_authorization(ip)
     address = ORMWriter.load_request_log(network_ip=ip) #Loading the IP address and data about the request and getting the address
-    signal = ORMReader.has_many_requests(network_ip=ip, max_frequency=20) #Checking if this IP exceeded the limit frequency
+    signal = ORMReader.has_many_requests(network_ip=ip, max_frequency=10) #Checking if this IP exceeded the limit frequency
     if signal:
         address.blocked_status = 1 #Blocking the IP
         api.db.session.commit()

@@ -7,8 +7,6 @@ from src.backend.config.db_settings.rsc import StrongConnection, Cursor
 import os
 from flask import make_response, Response
 from src.backend.model.auth import auth_jwt
-from typing import Dict, Any
-from src.backend.model.utils import Algorithms
 
 class Store(Resource):
 

@@ -1,8 +1,15 @@
-export function startUserSession(email, password, ip, base_path = `http://127.0.0.1:5000/user`) {
+export function startUserSession(email, password, ip, base_path = `http://127.0.0.1:5000/login`) {
     const msgDiv = document.getElementById("err-msg");
     const stdMsg = document.querySelectorAll("#err-msg > p")[0]; //Getting the area where the error text will be
     let status;
-    fetch(base_path + `?email=${email}&password=${password}&ip=${ip}`, {method: "GET", credentials: "include"})
+    fetch(base_path, 
+        {method: "POST",
+        credentials: "include",
+        body: JSON.stringify(
+            {"ip": ip, 
+            "email": email,
+            "password": password}),
+        headers : {"Content-Type": "application/json"}})
     .then(resp => {
         status = resp.status;
         return resp.json();
@@ -18,5 +25,6 @@ export function startUserSession(email, password, ip, base_path = `http://127.0.
     .catch(err => {
         msgDiv.style.display = "block";
         stdMsg.innerText = String(err);
+        console.log("ERROR NÉ PAEE")
     })
 }

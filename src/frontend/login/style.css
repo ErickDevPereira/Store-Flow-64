@@ -67,7 +67,7 @@ div.login-field {
 
 @media (max-width: 500px) {
 
-    input[type = "submit"]#login-but {
+    #login-but {
         width: 50%;
         margin-left: 70px;
     }
@@ -107,7 +107,7 @@ div.login-field {
 
 @media (min-width: 500px) and (max-width: 1000px) {
 
-    input[type = "submit"]#login-but {
+    #login-but {
         width: 82%;
         margin-left: 40px;
     }
