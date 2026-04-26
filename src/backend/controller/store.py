@@ -7,10 +7,11 @@ from src.backend.config.db_settings.rsc import StrongConnection, Cursor
 import os
 from flask import make_response, Response
 from src.backend.model.auth import auth_jwt
+from typing import Dict, List, Any
 
 class Store(Resource):
 
-    def post(self):
+    def post(self) -> Response:
         jwt, uid = auth_jwt() #Authenticating the cookies and jwt
         self.__JSON: Namespace = sing_store_json_receiver.get_args()
         if self.__JSON["company_name"] is None:
@@ -42,12 +43,12 @@ class Store(Resource):
         )
         return self.__resp
 
-    def get(self):
+    def get(self) -> Response:
         jwt, uid = auth_jwt() #Authenticating the cookies and jwt
         self.__sb: StoreBridge = StoreBridge()
         with StrongConnection(os.getenv("MYSQL_USER"), os.getenv("MYSQL_PASSWORD"), os.getenv("DB_NAME")) as scnx:
             with Cursor(scnx) as cursor:
-                self.__stores = self.__sb.get_entity(
+                self.__stores: List[Dict[str, Any]] = self.__sb.get_entity(
                             cursor = cursor,
                             uid = uid
                 )

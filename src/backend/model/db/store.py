@@ -18,7 +18,7 @@ class StoreBridge(Getter, Loader, Remover):
         cursor.execute("DELETE FROM stores WHERE store_id = %s", (store_id,))
         cnx.commit()
     
-    def get_entity(self, cursor: Any, uid: int) -> List[Dict[int, Any]]:
+    def get_entity(self, cursor: Any, uid: int) -> List[Dict[str, Any]]:
         cursor.execute(
             """ SELECT
                     company_name, store_id, registration_date
@@ -30,7 +30,7 @@ class StoreBridge(Getter, Loader, Remover):
                     store_id ASC""", (uid,)
                     )
         self.__dataset: List[Tuple[Any,...]] = cursor.fetchall()
-        self.__organized_dataset = []
+        self.__organized_dataset: List[Dict[str, Any]] = list()
         for data in self.__dataset:
             self.__organized_dataset.append({"store_id": data[1], "company_name": data[0], "registration_date": str(data[2])})
         return self.__organized_dataset #The dataset is sorted by store_id in ascending mode, which allows us to use binary search in order to get the store that we need as fastest as possible.

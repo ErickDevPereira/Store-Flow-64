@@ -7,10 +7,11 @@ from werkzeug.security import generate_password_hash
 from mysql.connector.errors import DataError, IntegrityError
 from src.backend.model.db import UserBridge
 from flask_restful.reqparse import Namespace
+from flask import Response
 
 class Register(Resource):
 
-    def post(self) -> Tuple[Dict[str, Any], int]:
+    def post(self) -> Response:
         self.__JSON: Namespace = sing_user_json_receiver.get_args()
         for field in (
             self.__JSON["first_name"],
