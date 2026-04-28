@@ -56,12 +56,12 @@ class ComplexQueries:
                     stores
                 WHERE
                     store_id = %s
-            """, (store_id,) * 5)
-        dirty_data: List[Tuple[int, str, str | datetime, int, int, int, int, int]] = db_cursor.fetchall()
+            """, (store_id,) * 6)
+        dirty_data: List[Tuple[int, str, str, int, int, int, int, int]] = db_cursor.fetchall()
         cleaned_data: Dict[str, int | str | datetime] = {
             "store_id" : dirty_data[0][0],
             "company_name": dirty_data[0][1],
-            "reg_date": dirty_data[0][2],
+            "reg_date": str(dirty_data[0][2]),
             "category_qtt": dirty_data[0][3],
             "customer_qtt": dirty_data[0][4],
             "employees_qtt": dirty_data[0][5],

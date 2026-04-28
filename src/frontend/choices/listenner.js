@@ -21,10 +21,10 @@ exit.addEventListener("click", evt => {
     }
 );
 
-const store = document.getElementById("stores-place");
-store.addEventListener("click", evt => {
+const store_bag = document.getElementById("stores-place");
+store_bag.addEventListener("click", evt => {
     const identifier = evt.target.id;
-    if (identifier !== "shop-img") {
+    if (identifier !== "adder") {
             const path = "http://127.0.0.1:5000";
             selectStore(path, identifier);
         }

@@ -16,7 +16,7 @@ class Bridge(Resource):
             abort(500, message = "ERROR: The id of the store was not found")
         with StrongConnection(os.getenv("MYSQL_USER"), os.getenv("MYSQL_PASSWORD"), os.getenv("DB_NAME")) as scnx:
             with Cursor(scnx) as cursor:
-                self.__dataset: Dict[str, int | str | datetime] = ComplexQueries().get_store_datasize(cursor, self.__store_id)
+                self.__dataset: Dict[str, int | str] = ComplexQueries().get_store_datasize(cursor, self.__store_id)
         self.__resp: Response = make_response({"data": self.__dataset}, 200)
         self.__resp.set_cookie(
             "jwt",
