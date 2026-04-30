@@ -1,3 +1,4 @@
-import { getData } from "./get_data.js";
+import { getData } from "../../general/utils.js";
 
-console.log(getData());
+const storeData = getData(); //Full aggregated data concerning this store
+console.log(storeData);

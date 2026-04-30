@@ -35,14 +35,15 @@
         <div id = "hamb-but" onclick = "viewOpt()">
         </div>
         <ul id = "hamburguer-opt">
-            <li><a href = "./index.html">Overall</a></li>
-            <li><a href = "../customers/index.html">Customers</a></li>
-            <li><a href = "../products/index.html">Products</a></li>
-            <li><a href = "../orders/index.html">Orders</a></li>
-            <li><a href = "../suppliers/index.html">Suppliers</a></li>
-            <li><a href = "../employees/index.html">Employees</a></li>
+            <li onclick = "transportWithData('./index.html')"><a href = "#">Overall</a></li>
+            <li onclick = "transportWithData('../customers/index.html')"><a href = "#">Customers</a></li>
+            <li onclick = "transportWithData('../products/index.html')"><a href = "#">Products</a></li>
+            <li onclick = "transportWithData('../orders/index.html')"><a href = "#">Orders</a></li>
+            <li onclick = "transportWithData('../suppliers/index.html')"><a href = "#">Suppliers</a></li>
+            <li onclick = "transportWithData('../employees/index.html')"><a href = "#">Employees</a></li>
         </ul>
     </nav>
+    <script src = "../../general/utils.js" type = "module"></script>
     <script src = "./start_script.js" type = "module"></script>
     <script src = "../hamburguer-code/interact.js"></script>
 </body>
