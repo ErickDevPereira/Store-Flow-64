@@ -10,7 +10,7 @@ export function selectStore(basePath, store_id) {
         if (status_code === 200) {
             const data = json['data'];
             window.location.href = 
-`../overall/index.html?store_id=${data["store_id"]}
+`../inner_pages/overall/index.html?store_id=${data["store_id"]}
 &company_name=${encodeURIComponent(data["company_name"])}
 &reg_date=${data["reg_date"]}
 &category_qtt=${data["category_qtt"]}

@@ -19,9 +19,8 @@ export function createNewStore(path, company_name) {
     }
     ).then(data => {
         if (ok) {
-            const today = new Date().toISOString().split("T")[0] //Today's date (formated as YYYY-MM-DD)
-            loadSingleStore(company_name, today);
             disableModal(); //Exiting the modal
+            window.location.href = "./index.html" //reloading
         } else {
             document.getElementById("err-msg").innerText = data["message"];
         }

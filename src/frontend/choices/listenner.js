@@ -24,7 +24,7 @@ exit.addEventListener("click", evt => {
 const store_bag = document.getElementById("stores-place");
 store_bag.addEventListener("click", evt => {
     const identifier = evt.target.id;
-    if (identifier !== "adder") {
+    if (identifier !== "adder" && identifier !== "stores-place") {
             const path = "http://127.0.0.1:5000";
             selectStore(path, identifier);
         }

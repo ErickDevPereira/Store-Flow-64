@@ -1,5 +1,5 @@
-from flask_restful import Resource
-from flask import Response, request,abort, make_response
+from flask_restful import Resource, abort
+from flask import Response, request, make_response
 from src.backend.config.db_settings.rsc import StrongConnection, Cursor
 from src.backend.model.auth import auth_jwt
 import os
@@ -13,7 +13,7 @@ class Bridge(Resource):
         jwt, uid = auth_jwt()
         self.__store_id: int | None = request.args.get("store-id", type = int)
         if self.__store_id is None:
-            abort(500, message = "ERROR: The id of the store was not found")
+            return {"message": "ERROR: The id of the store was not found"}, 500
         with StrongConnection(os.getenv("MYSQL_USER"), os.getenv("MYSQL_PASSWORD"), os.getenv("DB_NAME")) as scnx:
             with Cursor(scnx) as cursor:
                 self.__dataset: Dict[str, int | str] = ComplexQueries().get_store_datasize(cursor, self.__store_id)

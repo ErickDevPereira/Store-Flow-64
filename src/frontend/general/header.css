@@ -3,6 +3,10 @@ main {
     margin-top: 80px;
 }
 
+.adjust_with_header {
+    margin-top: 90px;
+}
+
 header {
     z-index: 999;
     position: fixed;
@@ -11,7 +15,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 90px; /*Same as the margin-top of the adjust_with_header*/
     width: 100%;
     background-color: #F8F8F8;
 }
@@ -73,6 +77,11 @@ div#ld-simbol {
 }
 
 @media (max-width: 780px) {
+
+    .adjust_with_header {
+        margin-top: 0px;
+    }
+
     header {
         position: static;
         top: 0px;

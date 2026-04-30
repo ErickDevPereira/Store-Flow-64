@@ -9,7 +9,7 @@ export function get_stores() {
         if (resp.status === 200) {
             ok = true; //Everything went fine and the JSON with the stores was sent to the frontend
         } else {
-            window.location.href = "../login/index.html"; //Redirect back to the login area when the status other than 200, like 401 (Unauthorized)
+            window.location.href = "../login/index.html"; //Redirect back to the login area when the status is other than 200, like 401 (Unauthorized)
         }
         return resp.json(); //The stores are inside this JSON.
     })
