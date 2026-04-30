@@ -4,9 +4,7 @@ if (window.innerWidth < 750) {
 }
 
 function viewOpt() {
-    const opt = document.getElementById("hamburguer-opt");
     const opt_status = opt.style.display;
-    console.log(opt_status);
     if (opt_status === "none") {
         opt.style.display = "flex";
         opt.style.flexDirection =  "column";
@@ -16,7 +14,6 @@ function viewOpt() {
 }
 
 function correctDisplayBug() {
-    const opt = document.getElementById("hamburguer-opt");
     if (window.innerWidth < 750) {
         opt.style.display = "none";
     } else {
