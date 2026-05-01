@@ -8,6 +8,13 @@
     <link href = "../../general/style.css" rel = "stylesheet">
     <link href = "../hamburguer-code/style.css" rel = "stylesheet">
     <link href = "../standard_starting_model/style.css" rel = "stylesheet">
+    <style>
+        @media (max-width: 720px) {
+            #side-info {
+                top: 400px !important;
+            }
+        }
+    </style>
 </head>
 <body onresize = "correctDisplayBug()">
     <header>
@@ -59,9 +66,9 @@
         </section>
         <div id="side-info">
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                Start adding your data through the next pages. Click at the button to start
             </p>
-            <button id = "iadd" class = "but but_col_effect">ADD</button>
+            <button id = "iadd" class = "but but_col_effect">START</button>
         </div>
     </main>
     <script src = "../../general/utils.js" type = "module"></script>

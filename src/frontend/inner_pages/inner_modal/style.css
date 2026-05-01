@@ -1,0 +1,28 @@
+section#inner-modal {
+    z-index: 9999999;
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(235, 235, 235);
+    width: 600px;
+    min-height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+section > div#cross-img {
+    position: absolute;
+    background-image: url("../../imgs/cross.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
