@@ -8,6 +8,7 @@
     <link href = "../../general/style.css" rel = "stylesheet">
     <link href = "../hamburguer-code/style.css" rel = "stylesheet">
     <link href = "./style.css" rel = "stylesheet">
+    <link href = "../standard_starting_model/style.css" rel = "stylesheet">
 </head>
 <body onresize = "correctDisplayBug()">
     <header>
@@ -43,8 +44,30 @@
             <li onclick = "transportWithData('../employees/index.html')"><a href = "#">Employees</a></li>
         </ul>
     </nav>
+    <main id = "not-full-data">
+        <section id = "support">
+            <div id = "gif">
+            </div>
+            <div id = 'support-txt'>
+                <p>
+                    NOTHING TO BE SEEN YET!
+                    <br>
+                    You must add at least 5 products if you want to see the results.
+                </p>
+            </div>
+        </section>
+        <section id = "side_section">
+        </section>
+        <div id="side-info">
+            <p>
+                You can start adding data of your store by adding a new customer, product, supplier or an employee. Click over this button if you want to register a new product
+            </p>
+            <button id = "iadd" class = "but but_col_effect">ADD</button>
+        </div>
+    </main>
     <script src = "../../general/utils.js" type = "module"></script>
     <script src = "./start_script.js" type = "module"></script>
     <script src = "../hamburguer-code/interact.js"></script>
+    <script src = "../standard_starting_model/start_script.js" type = "module"></script>
 </body>
 </html>
