@@ -9,6 +9,7 @@
     <link href = "../hamburguer-code/style.css" rel = "stylesheet">
     <link href = "./style.css" rel = "stylesheet">
     <link href = "../standard_starting_model/style.css" rel = "stylesheet">
+    <link href = "../inner_modal/style.css" rel = "stylesheet">
 </head>
 <body onresize = "correctDisplayBug()">
     <header>
@@ -62,9 +63,37 @@
             <p>
                 You can start adding data of your store by adding a new customer, product, supplier or an employee. Click over this button if you want to register a new supplier
             </p>
-            <button id = "iadd" class = "but but_col_effect">ADD</button>
+            <button id = "iadd" class = "but but_col_effect" onclick = "callInnerModal()">ADD</button>
         </div>
     </main>
+    <section inert class = "inner-modal">
+        <div id = "cross-img" onclick = "closeInnerModal()">
+        </div>
+        <form id = "customer_poster">
+            <label for = "cn">company name</label>
+            <br>
+            <input type = "text" id = "cn" required>
+            <br>
+            <label for = "city">city</label>
+            <br>
+            <input type = "text" id = "city" required>
+            <br>
+            <label for = "country">country</label>
+            <br>
+            <input type = "text" id = "country" required>
+            <br>
+            <label for = "address">address</label>
+            <br>
+            <input type = "text" id = "address" required>
+            <br>
+            <label for = "phone">phone</label>
+            <br>
+            <input type = "text" id = "phone" required>
+            <br>
+            <input type = "submit" value = "+">
+        </form>
+    </section>
+    <script src = "../inner_modal/script.js"></script>
     <script src = "../../general/utils.js" type = "module"></script>
     <script src = "./start_script.js" type = "module"></script>
     <script src = "../hamburguer-code/interact.js"></script>

@@ -9,6 +9,7 @@
     <link href = "../hamburguer-code/style.css" rel = "stylesheet">
     <link href = "./style.css" rel = "stylesheet">
     <link href = "../standard_starting_model/style.css" rel = "stylesheet">
+    <link href = "../inner_modal/style.css" rel = "stylesheet">
 </head>
 <body onresize = "correctDisplayBug()">
     <header>
@@ -62,9 +63,57 @@
             <p>
                 You can start adding data of your store by adding a new customer, product, supplier or an employee. Click over this button if you want to register a new product
             </p>
-            <button id = "iadd" class = "but but_col_effect">ADD</button>
+            <button id = "iadd" class = "but but_col_effect" onclick = "callInnerModal()">ADD PRODUCT</button>
+            <button id = "iadd" class = "but but_col_effect" onclick = "callInnerModal(1)" style = "margin-top: 15px;">ADD CATEGORY</button>
         </div>
     </main>
+    <section inert class = "inner-modal">
+        <div id = "cross-img" onclick = "closeInnerModal()">
+        </div>
+        <form id = "customer_poster">
+            <label for = "prodn">product name</label>
+            <br>
+            <input type = "text" id = "prodn" required>
+            <br>
+            <label for = "pdesc">description</label>
+            <br>
+            <input type = "text" id = "pdesc" required>
+            <br>
+            <label for = "catid">category id</label>
+            <br>
+            <input type = "text" id = "catid" required>
+            <br>
+            <label for = "pp">price</label>
+            <br>
+            <input type = "text" id = "pp" required>
+            <br>
+            <label for = "supid">supplier id</label>
+            <br>
+            <input type = "text" id = "supid" required>
+            <br>
+            <label for = "iuni">units</label>
+            <br>
+            <input type = "text" id = "iuni" required>
+            <br>
+            <input type = "submit" value = "+">
+        </form>
+    </section>
+    <section inert class = "inner-modal">
+        <div id = "cross-img" onclick = "closeInnerModal(1)">
+        </div>
+        <form id = "customer_poster">
+            <label for = "ctn">category name</label>
+            <br>
+            <input type = "text" id = "ctn" required>
+            <br>
+            <label for = "cdesc">description</label>
+            <br>
+            <input type = "text" id = "cdesc" required>
+            <br>
+            <input type = "submit" value = "+">
+        </form>
+    </section>
+    <script src = "../inner_modal/script.js"></script>
     <script src = "../../general/utils.js" type = "module"></script>
     <script src = "./start_script.js" type = "module"></script>
     <script src = "../hamburguer-code/interact.js"></script>

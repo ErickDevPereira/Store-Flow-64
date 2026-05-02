@@ -9,6 +9,7 @@
     <link href = "../hamburguer-code/style.css" rel = "stylesheet">
     <link href = "./style.css" rel = "stylesheet">
     <link href = "../standard_starting_model/style.css" rel = "stylesheet">
+    <link href = "../inner_modal/style.css" rel = "stylesheet">
 </head>
 <body onresize = "correctDisplayBug()">
     <header>
@@ -62,9 +63,53 @@
             <p>
                 You can start adding data of your store by adding a new customer, product, supplier or an employee, but you can't create an order before you create any of these. Click over this button if you want to register a new order
             </p>
-            <button id = "iadd" class = "but but_col_effect">ADD</button>
+            <button id = "iadd" class = "but but_col_effect" onclick = "callInnerModal()">ADD</button>
         </div>
     </main>
+    <section inert class = "inner-modal">
+        <div id = "cross-img" onclick = "closeInnerModal()">
+        </div>
+        <form id = "customer_poster">
+            <label for = "ci">customer id</label>
+            <br>
+            <input type = "text" id = "ci" required>
+            <br>
+            <label for = "pi">product id</label>
+            <br>
+            <input type = "text" id = "pi" required>
+            <br>
+            <label for = "ei">employee id</label>
+            <br>
+            <input type = "text" id = "ei" required>
+            <br>
+            <label for = "qb">quantity bought</label>
+            <br>
+            <input type = "text" id = "qb" required>
+            <br>
+            <label for = "pd">purchase date</label>
+            <br>
+            <input type = "text" id = "pd" required>
+            <br>
+            <label for = "sd">shipped date</label>
+            <br>
+            <input type = "date" id = "sd" required>
+            <br>
+            <label for = "cd">catched date</label>
+            <br>
+            <input type = "date" id = "cd" required>
+            <br>
+            <label for = "op">The purchase was online?</label>
+            <br>
+            <input type = "radio" name = "online" id = "online-yes" value = "true" style="width: 20px; height: 20px; margin-left: 10px;">
+            <label for = "online-yes">Yes</label>
+            <br>
+            <input type = "radio" name = "online" id = "online-no" value = "false" style="width: 20px; height: 20px; margin-left: 10px;">
+            <label for = "online-no">No</label>
+            <br>
+            <input type = "submit" value = "+">
+        </form>
+    </section>
+    <script src = "../inner_modal/script.js"></script>
     <script src = "../../general/utils.js" type = "module"></script>
     <script src = "./start_script.js" type = "module"></script>
     <script src = "../standard_starting_model/start_script.js" type = "module"></script>

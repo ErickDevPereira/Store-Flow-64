@@ -66,9 +66,42 @@
             <button id = "iadd" class = "but but_col_effect" onclick = "callInnerModal()">ADD</button>
         </div>
     </main>
-    <section inert id = "inner-modal">
+    <section inert class = "inner-modal">
         <div id = "cross-img" onclick = "closeInnerModal()">
         </div>
+        <form id = "customer_poster">
+            <label for = "fn">first name</label>
+            <br>
+            <input type = "text" id = "fn" required>
+            <br>
+            <label for = "ln">last name</label>
+            <br>
+            <input type = "text" id = "ln" required>
+            <br>
+            <label for = "city">city</label>
+            <br>
+            <input type = "text" id = "city" required>
+            <br>
+            <label for = "country">country</label>
+            <br>
+            <input type = "text" id = "country" required>
+            <br>
+            <label for = "address">address</label>
+            <br>
+            <input type = "text" id = "address" required>
+            <br>
+            <label for = "phone">phone</label>
+            <br>
+            <input type = "text" id = "phone" required>
+            <br>
+            <label for = "sex">sex</label>
+            <br>
+            <select name = "sex-type" id = "sex">
+                <option value = "F">female</option>
+                <option value = "M">male</option>
+            </select>
+            <input type = "submit" value = "+">
+        </form>
     </section>
     <script src = "../inner_modal/script.js"></script>
     <script src = "../../general/utils.js" type = "module"></script>
