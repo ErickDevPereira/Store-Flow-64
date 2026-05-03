@@ -12,9 +12,10 @@ class Categories(Plant):
                     category_name VARCHAR(50) NOT NULL,
                     description VARCHAR(255) NOT NULL,
                     store_id INT UNSIGNED NOT NULL,
-                    FOREIGN KEY (store_id) REFERENCES stores (store_id)
+                    FOREIGN KEY (store_id) REFERENCES stores (store_id),
+                    UNIQUE(category_name)
                 )
-            """)
+            """) #The name of the category must be unique.
     
     def initialize(self, scnx: MySQLConnectionAbstract) -> None:
         self.__create_categories_table(scnx) #Initializing the categories table

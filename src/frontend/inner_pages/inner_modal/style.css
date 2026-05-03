@@ -15,6 +15,12 @@ section.inner-modal {
     transition: opacity 0.5s, filter 0.5s;
 }
 
+p.msg-from-json {
+    text-align: center;
+    font-size: 1.3em;
+    color: rgb(73, 73, 73);
+}
+
 section > div#cross-img {
     position: absolute;
     background-image: url("../../imgs/cross.png");
