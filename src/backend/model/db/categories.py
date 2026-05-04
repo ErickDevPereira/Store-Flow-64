@@ -1,6 +1,6 @@
 from .entity import Remover, Loader, Getter
 from mysql.connector.abstracts import MySQLConnectionAbstract
-from typing import Any, List, Tuple
+from typing import Any, List, Tuple, Dict
 
 class CategoryBridge(Getter, Loader, Remover):
 
@@ -21,13 +21,13 @@ class CategoryBridge(Getter, Loader, Remover):
                        (cat_name, description, store_id))
         db_scnx.commit()
 
-    def get_entity(
+    def get_entity(self,
             cursor: Any,
             cat_name: str,
-            store_id: int) -> List[Tuple[str, int]] | None:
+            store_id: int) -> Dict[int, str, str] | None:
         cursor.execute("""
                         SELECT
-                            category_name, description
+                            category_id, category_name, description
                         FROM
                             categories
                         WHERE
@@ -35,6 +35,7 @@ class CategoryBridge(Getter, Loader, Remover):
                         (cat_name, store_id))
         data: List[Tuple[str, int]] = cursor.fetchall()
         return {
-            "category-name" : data[0][0],
-            "desc" : data[0][1]
+            "category-id" : data[0][0],
+            "category-name" : data[0][1],
+            "desc" : data[0][2]
         } if len(data) != 0 else None

@@ -44,7 +44,7 @@ class EndpointsCategories(Resource, EndpointsEntity):
             abort(403, message = "This name already exist")
         if self.__server_error:
             abort(500, message = "Server Error: something went wrong on the category table")
-        self.__resp = make_response({"message": f"Category '{self.__cat_name}' created successfully"}, 201)
+        self.__resp: Response = make_response({"message": f"Category '{self.__cat_name}' created successfully"}, 201)
         self.__resp.set_cookie(
             "jwt",
             value = jwt,

@@ -15,7 +15,8 @@ class Suppliers(Plant):
                     phone VARCHAR(30) NOT NULL,
                     address VARCHAR(255) NOT NULL,
                     store_id INT UNSIGNED NOT NULL,
-                    FOREIGN KEY (store_id) REFERENCES stores (store_id)
+                    FOREIGN KEY (store_id) REFERENCES stores (store_id),
+                    UNIQUE(company_name)
                 )
             """)
     
